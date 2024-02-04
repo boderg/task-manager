@@ -1,11 +1,11 @@
 from taskmanager import db
 
 
-class Cateegory(db.Model):
+class Category(db.Model):
     # Schema for the Category model
     id = db.Column(db.Integer, primary_key=True)
     category_name = db.Column(db.String(25), unique=True, nullable=False)
-    taska = db.relationship("Task", backref="category", cascade="all, delete", lazy=True)
+    task = db.relationship("Task", backref="category", cascade="all, delete", lazy=True)
 
     def __repr__(self):
         # __repr__ to represent itself in the format of a string
